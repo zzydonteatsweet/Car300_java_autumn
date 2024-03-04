@@ -1,0 +1,52 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.13'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+}
+
+group = 'com.InfoSystem'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.7.1'
+
+    implementation group: 'redis.clients', name: 'jedis', version: '3.0.1'
+
+//    implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.5.3'
+
+    implementation group: 'redis.clients', name: 'jedis', version: '3.0.1'
+
+    implementation group: 'org.apache.commons', name: 'commons-pool2', version: '2.12.0'
+
+
+    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5'
+
+//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.7.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation group: 'com.alibaba.fastjson2', name: 'fastjson2', version: '2.0.47'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
